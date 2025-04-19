@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ data.username }}'s Yogosha Stats</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .card {
+      background-color: #121212;
+      color: #ffffff;
+      padding: 16px;
+      max-width: 490px;
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+    }
+    .stats-container {
+      flex: 1;
+    }
+    .stats-container h1 {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0 0 16px;
+    }
+    .stats-grid {
+      display: flex;
+      gap: 16px;
+    }
+    .stats-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .stat-icon {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      text-align: center;
+    }
+    .stat-icon.star::before {
+      content: '★';
+    }
+    .stat-icon.file::before {
+      content: '📄';
+    }
+    .stat-icon.chart::before {
+      content: '📊';
+    }
+    .stat-icon.trophy::before {
+      content: '🏆';
+    }
+    .stat-icon.clock::before {
+      content: '🕒';
+    }
+    .rank-container {
+      margin-top: 16px;
+      background-color: #1a1a1a;
+      border-radius: 6px;
+      padding: 8px;
+      display: flex;
+      gap: 24px;
+      width: fit-content;
+    }
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .rank-label {
+      color: #9ca3af;
+      font-size: 12px;
+    }
+    .rank-value {
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .image-container {
+      flex-shrink: 0;
+    }
+    .image {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid #0451bf;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- Left Side: Stats and Ranks -->
+    <div class="stats-container">
+      <h1>{{ data.username }}'s Yogosha Stats</h1>
+      <div class="stats-grid">
+        <!-- First Column: Kudos, Reports -->
+        <div class="stats-column">
+          <div class="stat-item">
+            <span class="stat-icon star" style="color: #eab308;"></span>
+            <span>Kudos: {{data.allTime.kudos }}</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon file" style="color: #3b82f6;"></span>
+            <span>Reports: {{data.totalReports }}</span>
+          </div>
+        </div>
+        <!-- Second Column: Acceptance, Avg Quality -->
+        <div class="stats-column">
+          <div class="stat-item">
+            <span class="stat-icon chart" style="color: #22c55e;"></span>
+            <span>Acceptance: {{data.acceptanceRate }}%</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-icon star" style="color: #a855f7;"></span>
+            <span>Avg Quality: {{ data.averageReportsQuality }}/5</span>
+          </div>
+        </div>
+      </div>
+      <!-- Rank Section -->
+      <div class="rank-container">
+        <div class="rank-item">
+          <span class="stat-icon trophy" style="color: #eab308;"></span>
+          <span class="rank-label">All Time Rank:</span>
+          <span class="rank-value">{{ data.allTime.rank }}</span>
+        </div>
+        <div class="rank-item">
+          <span class="stat-icon clock" style="color: #22c55e;"></span>
+          <span class="rank-label">Last 30 Days Rank:</span>
+          <span class="rank-value">{{ data.last30DaysRank }}</span>
+        </div>
+      </div>
+    </div>
+    <!-- Right Side: Image -->
+    <div class="image-container">
+      <div class="image">
+        <img
+          src="{{ data.image }}"
+          alt="{{ data.username }}"
+        />
+      </div>
+    </div>
+  </div>
+</body>
+</html>
