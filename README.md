@@ -1,7 +1,15 @@
+<div align="center">
+
+![](./public/demo.png)
+
 ## Yogosha Readme Stats
 
-This section provides an overview of the Yogosha profile card statistics. It includes key metrics and insights to help you understand your profile's performance and engagement. Use this information to track progress and optimize your activities effectively.
+**Yogosha Readme Stats** card provides quick view of the researcher's statistics from the Yogosha platform, providing insights into their lastest activity and achievements. This stats card can be use in Github, blogs or personal websites.
+</div>
 
-### ToDo
+## Usage
+```
+![Yogosha Profile](https://yogosha-readme-stats.vercel.app/api?username=your_username)
+```
 
-- [x] Add svg/png feature
+***Note**: Must keep your profile public.*
