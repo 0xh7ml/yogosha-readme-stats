@@ -13,3 +13,7 @@
 ```
 
 ***Note**: Must keep your profile public.*
+
+## 🙏 Thanks for Contributing
+- [Rudra Sarker](https://github.com/rudSarkar)
+- Maybe u ;)
