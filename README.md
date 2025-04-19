@@ -4,4 +4,4 @@ This section provides an overview of the Yogosha profile card statistics. It inc
 
 ### ToDo
 
-- [ ] Add svg/png feature
+- [x] Add svg/png feature
